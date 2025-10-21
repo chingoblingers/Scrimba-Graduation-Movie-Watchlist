@@ -8,5 +8,15 @@ body{
 }
 main{
     background-color: #121212;
+}
+header{
+    background-image: url("./images/movie.jpg");
+    background-size: cover;
+    background-position: center;
+}
+#header-info{
     padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
