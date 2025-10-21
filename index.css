@@ -14,9 +14,22 @@ header{
     background-size: cover;
     background-position: center;
 }
-#header-info{
-    padding: 1rem;
+#header-info,.intro,.middle,.movie-info,.movie{
     display: flex;
+}
+#header-info{
     align-items: center;
     justify-content: space-between;
+}
+.movie-poster{
+    width: 30%;
+}
+.movie-info{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.movie{
+    align-items: center;
+    border: 1rem solid black;
 }
