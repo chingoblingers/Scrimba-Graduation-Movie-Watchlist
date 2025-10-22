@@ -9,10 +9,15 @@ body{
 main{
     background-color: #121212;
 }
+.content-container{
+    padding: 1em;
+}
 header{
     background-image: url("./images/movie.jpg");
     background-size: cover;
     background-position: center;
+    padding: 2em 0;
+    position: relative;
 }
 #header-info,.intro,.middle,.movie-info,.movie{
     display: flex;
@@ -31,5 +36,9 @@ header{
 }
 .movie{
     align-items: center;
-    border: 1rem solid black;
+    border-bottom: 0.2rem solid #2C2C2C;
+    padding: 3rem 0;
+}
+#movie-form{
+    position: absolute;
 }
