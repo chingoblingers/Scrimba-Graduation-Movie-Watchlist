@@ -69,3 +69,13 @@ function getMovieDetails(e) {
       if (plot)    plot.textContent    = data.Plot       || "";
     });
 }
+
+movieList.addEventListener("click" , addToMovieArr)
+
+function addToMovieArr(e){
+    if(e.target.matches(`[data-add]`)){
+        const id = e.target.dataset.add
+        watchListArr.push(id)
+
+    }
+}
