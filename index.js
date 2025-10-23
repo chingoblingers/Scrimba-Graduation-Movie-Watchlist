@@ -1,7 +1,7 @@
 const form = document.getElementById("movie-form")
 const movieList = document.getElementById("movie-list")
 let movieDataarr =[]
-let watchListArr = []
+let watchListArr = JSON.parse(localStorage.getItem('watchlist') || '[]')
 
 form.addEventListener("submit", searchForMovie)
 
@@ -32,7 +32,7 @@ function generateMovieHtml(arr){
                     <div class="middle">
                         <p class="runtime"> </p>   
                         <p class="genre"> </p>
-                        <button data-add=${movie.imdbID}> + Watchlist </button>
+                        <button data-add="${movie.imdbID}"> + Watchlist </button>
                     </div>
 
                     <p class="plot"> </p>   
@@ -47,7 +47,7 @@ function renderMovieList(MovieArr) {
 
 }
 
-movieList.addEventListener("mouseover", getMovieDetails);
+movieList.addEventListener("mouseenter", getMovieDetails);
 
 function getMovieDetails(e) {
   const movieContainer = e.target.closest(".movie");
@@ -78,8 +78,10 @@ movieList.addEventListener("click" , addToMovieArr)
 function addToMovieArr(e){
     if(e.target.matches(`[data-add]`)){
         const id = e.target.dataset.add
-        watchListArr.push(id)
-        console.log(watchListArr)
+        if (!watchListArr.includes(id)){
+            watchListArr.push(id)
+            localStorage.setItem('watchlist', JSON.stringify(watchListArr))
+        }
 
     }
 }
