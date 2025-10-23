@@ -1,5 +1,6 @@
 const form = document.getElementById("movie-form")
 const movieList = document.getElementById("movie-list")
+let movieDataarr =[]
 let watchListArr = []
 
 form.addEventListener("submit", searchForMovie)
@@ -11,7 +12,9 @@ function searchForMovie(e){
 
     fetch(`https://www.omdbapi.com/?apikey=c881fa24&s=${encodeURIComponent(movie)}`)
     .then(res => res.json())
-    .then(data => renderMovieList(data.Search))
+    .then(data => {
+        movieDataarr = data.Search || []
+        renderMovieList(movieDataarr)})
 }
 
 function generateMovieHtml(arr){
