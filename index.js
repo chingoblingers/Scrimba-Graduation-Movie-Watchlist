@@ -79,6 +79,7 @@ function addToMovieArr(e){
     if(e.target.matches(`[data-add]`)){
         const id = e.target.dataset.add
         watchListArr.push(id)
+        console.log(watchListArr)
 
     }
 }
